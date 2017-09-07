@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Test</title> 
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	</head>
+	<body>
+		<header>	
+			<h1>Photo Album</h1>
+		</header>
+			
+
+		
+		<main>
+		<!-- The Modal -->
+		<div id="modal" class="modal">
+
+		  <!-- Modal content -->
+		  <h4 class="modal-header modal__elem">Edit Item:<span class="close">&times;</span>
+		    </h4>
+		  <div class="modal-content container modal__elem">
+		    
+		    	<input type="hidden" id="modal__id">
+			   <p>
+			      <label>Name</label>
+			      <textarea id="modal__text" name="modal__text" maxlength="300"></textarea>
+			   </p>
+			   <p>
+			      <input type="file" value="images/galaxy.jpg" height="320px" width="320px" id="modal__fileToUpload" class="fileToUpload" name="fileToUpload"></br>
+			      <label>File</label>
+			      <input type="button" value="Select File" class="button--file">
+			      <span id="modalContent__file"></span>
+			   </p>
+			   <p>
+			      <input type="button" value="Save" id="edit__btn">
+			      <input class="modal__btn--reset" type="button" value="Reset file">
+			   </p>
+		  </div>
+
+		</div>
+
+		<h4 class="addContainer">Create Item:</h4>
+		<div class="addContainer container">
+			   
+			   <p>
+			      <label>Name</label>
+			      <textarea id="content__text" maxlength="300"></textarea>
+			   </p>
+			   <p>
+			      <input type="file" id="addContainer__fileToUpload" height="320px" width="320px" class="fileToUpload" name="fileToUpload"></br>
+			      <label>File</label>
+			      <input type="button" value="Select File" class="button__add--file">
+			      <span id="addContainer__file"></span>
+			   </p>
+			   <p>
+			      <input value="Add" type="button" id="add__btn"/>
+			      <input class="btn-file-reset" type="button" value="Reset file">
+			   </p>
+		</div>
+
+		
+		<section>
+			<div class="grid-header">
+				<label id="title-counter">Counter:</label><span id="counter"></span>
+			</div>
+			<ul class="sortable grid con"></ul>
+		</section>
+		</main>
+
+	<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.sortable.js"></script>
+	<script type="text/javascript" src="/js/functions.js"></script>
+	<script>
+		$(function() {
+			$("ul").sortable({
+				connectWith: ".con"
+			})
+			
+		});
+	</script>
+	</body>
+</html>
